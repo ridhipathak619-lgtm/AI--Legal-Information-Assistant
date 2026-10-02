@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Legal Information Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <h1>Ask about the law, with the source beside the answer.</h1>
+      <p class="note">General legal information drawn from the documents you indexed. It is not legal advice.</p>
+    </header>
+
+    <section id="thread" class="thread" aria-live="polite">
+      <p class="empty" id="empty">Ask a question, for example: what are the rights of an arrested person?</p>
+    </section>
+
+    <form id="composer" class="composer">
+      <label for="msg" class="sr">Your question</label>
+      <textarea id="msg" rows="2" placeholder="Type your legal question" required></textarea>
+      <button type="submit" id="send">Ask</button>
+    </form>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
